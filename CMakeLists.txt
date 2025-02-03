@@ -4,11 +4,12 @@ project(transformer_fusion CUDA CXX)
 set(CMAKE_CUDA_STANDARD 17)
 set(CMAKE_CXX_STANDARD 17)
 
-# Find CUDA
+# Add this before find_package(CUDA REQUIRED)
+set(CUDAToolkit_ROOT "/usr/local/cuda")  # or "/opt/homebrew/opt/cuda" for M1
 find_package(CUDA REQUIRED)
 
 # Add include directories
-include_directories(${CMAKE_SOURCE_DIR}/include)
+include_directories(${CMAKE_SOURCE_DIR}/include ${CMAKE_SOURCE_DIR}/src)
 
 # Add executable
 add_executable(transformer_demo

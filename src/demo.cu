@@ -102,5 +102,18 @@ int main() {
     cudaFree(d_ffn_weights);
     cudaFree(d_output);
     
+    // Add this to your main function
+    BenchmarkSuite benchmark;
+    benchmark.run_comprehensive_benchmark();
+    
+    PerformanceMonitor monitor;
+
+    // Record metrics during inference
+    monitor.record_latency(avg_latency);
+    monitor.record_memory_usage(input_size * sizeof(float) + qkv_size * sizeof(float) + ffn_size * sizeof(float) + input_size * sizeof(float));
+
+    // Generate report
+    monitor.generate_report();
+    
     return 0;
 } 
