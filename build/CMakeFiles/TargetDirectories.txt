@@ -1,0 +1,4 @@
+/Users/christophersantos/Desktop/Projects/intro_to_cuda/build/CMakeFiles/transformer_demo.dir
+/Users/christophersantos/Desktop/Projects/intro_to_cuda/build/CMakeFiles/metal_shader.dir
+/Users/christophersantos/Desktop/Projects/intro_to_cuda/build/CMakeFiles/edit_cache.dir
+/Users/christophersantos/Desktop/Projects/intro_to_cuda/build/CMakeFiles/rebuild_cache.dir

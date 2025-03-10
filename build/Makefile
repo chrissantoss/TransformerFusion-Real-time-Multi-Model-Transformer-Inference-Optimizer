@@ -129,6 +129,19 @@ transformer_demo/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/transformer_demo.dir/build.make CMakeFiles/transformer_demo.dir/build
 .PHONY : transformer_demo/fast
 
+#=============================================================================
+# Target rules for targets named metal_shader
+
+# Build rule for target.
+metal_shader: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 metal_shader
+.PHONY : metal_shader
+
+# fast build rule for target.
+metal_shader/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/metal_shader.dir/build.make CMakeFiles/metal_shader.dir/build
+.PHONY : metal_shader/fast
+
 src/demo.o: src/demo.cpp.o
 .PHONY : src/demo.o
 
@@ -153,29 +166,13 @@ src/demo.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/transformer_demo.dir/build.make CMakeFiles/transformer_demo.dir/src/demo.cpp.s
 .PHONY : src/demo.cpp.s
 
-src/fusion_kernel.o: src/fusion_kernel.cpp.o
+src/fusion_kernel.o: src/fusion_kernel.mm.o
 .PHONY : src/fusion_kernel.o
 
 # target to build an object file
-src/fusion_kernel.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/transformer_demo.dir/build.make CMakeFiles/transformer_demo.dir/src/fusion_kernel.cpp.o
-.PHONY : src/fusion_kernel.cpp.o
-
-src/fusion_kernel.i: src/fusion_kernel.cpp.i
-.PHONY : src/fusion_kernel.i
-
-# target to preprocess a source file
-src/fusion_kernel.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/transformer_demo.dir/build.make CMakeFiles/transformer_demo.dir/src/fusion_kernel.cpp.i
-.PHONY : src/fusion_kernel.cpp.i
-
-src/fusion_kernel.s: src/fusion_kernel.cpp.s
-.PHONY : src/fusion_kernel.s
-
-# target to generate assembly for a file
-src/fusion_kernel.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/transformer_demo.dir/build.make CMakeFiles/transformer_demo.dir/src/fusion_kernel.cpp.s
-.PHONY : src/fusion_kernel.cpp.s
+src/fusion_kernel.mm.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/transformer_demo.dir/build.make CMakeFiles/transformer_demo.dir/src/fusion_kernel.mm.o
+.PHONY : src/fusion_kernel.mm.o
 
 src/transformer_fusion.o: src/transformer_fusion.cpp.o
 .PHONY : src/transformer_fusion.o
@@ -209,13 +206,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... metal_shader"
 	@echo "... transformer_demo"
 	@echo "... src/demo.o"
 	@echo "... src/demo.i"
 	@echo "... src/demo.s"
 	@echo "... src/fusion_kernel.o"
-	@echo "... src/fusion_kernel.i"
-	@echo "... src/fusion_kernel.s"
 	@echo "... src/transformer_fusion.o"
 	@echo "... src/transformer_fusion.i"
 	@echo "... src/transformer_fusion.s"
